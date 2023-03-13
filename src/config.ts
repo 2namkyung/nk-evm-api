@@ -1,0 +1,21 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const {
+  GOERLI_INFURA_WS,
+  GOERLI_INFURA_URL,
+  MAINNET_INFURA_WS,
+  MAINNET_INFURA_URL,
+  MUMBAI_PUBLIC_URL,
+  MUMBAI_INFURA_URL,
+} = process.env;
+
+export default {
+  GOERLI_INFURA_WS,
+  GOERLI_INFURA_URL,
+  MAINNET_INFURA_WS,
+  MAINNET_INFURA_URL,
+  MUMBAI_PUBLIC_URL,
+  MUMBAI_INFURA_URL,
+};
