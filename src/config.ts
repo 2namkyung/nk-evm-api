@@ -9,6 +9,10 @@ const {
   MAINNET_INFURA_URL,
   MUMBAI_PUBLIC_URL,
   MUMBAI_INFURA_URL,
+  DB_HOST,
+  DB_USER,
+  DB_PASSWORD,
+  DB_NAME,
 } = process.env;
 
 export default {
@@ -18,4 +22,8 @@ export default {
   MAINNET_INFURA_URL,
   MUMBAI_PUBLIC_URL,
   MUMBAI_INFURA_URL,
+  DB_HOST,
+  DB_USER,
+  DB_PASSWORD,
+  DB_NAME,
 };

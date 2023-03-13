@@ -8,4 +8,5 @@ export interface ERC721TransferTxInfo extends ERC721TransferEvent {
   contract: string;
   txHash: string;
   eventName: string;
+  price: string;
 }

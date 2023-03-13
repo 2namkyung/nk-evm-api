@@ -30,6 +30,9 @@ export async function findERC721TransferEventInBlock() {
                 .decode(['uint256'], topics[3])[0]
                 .toString();
               const eventName = from === ZERO_ADDRESS ? 'MINT' : 'TRANSFER';
+              const { value } = await jsonRpcProvider.getTransaction(txHash);
+              const price = ethers.formatEther(value);
+              console.log(price);
 
               const nftData = {
                 contract,
@@ -38,6 +41,7 @@ export async function findERC721TransferEventInBlock() {
                 to,
                 txHash,
                 eventName,
+                price,
               };
 
               await insertERC721TransferTxInfo(nftData);
@@ -51,3 +55,5 @@ export async function findERC721TransferEventInBlock() {
     });
   });
 }
+
+findERC721TransferEventInBlock();
