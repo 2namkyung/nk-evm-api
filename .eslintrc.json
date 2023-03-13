@@ -7,28 +7,20 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:prettier/recommended"
   ],
   "plugins": ["prettier", "@typescript-eslint"],
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
     "sourceType": "module"
   },
-  "rules": {
-    "no-console": "off",
-    "no-debugger": "warn",
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true,
-        "semi": true,
-        "useTaps": true,
-        "tabWidth": 2,
-        "trailingComma": "all",
-        "printWidth": 80,
-        "bracketSpacing": true,
-        "arrowParens": "avoid"
+  "rules": { "prettier/prettier": "error" },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".json"]
       }
-    ]
+    }
   }
 }

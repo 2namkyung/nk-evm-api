@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "node typescript template",
   "main": "index.js",
-  "author": "nk",
+  "author": "namkyung",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.15.1",
