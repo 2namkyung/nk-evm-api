@@ -19,7 +19,8 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "collector:erc721": "ts-node src/evm/erc721/index.ts"
+    "collector:erc721": "ts-node src/evm/erc721/index.ts",
+    "checkType:erc721": "ts-node src/evm/erc721/supports-interface.ts"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
