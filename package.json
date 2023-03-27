@@ -20,7 +20,8 @@
   },
   "scripts": {
     "collector:erc721": "ts-node src/evm/erc721/index.ts",
-    "checkType:erc721": "ts-node src/evm/erc721/supports-interface.ts"
+    "checkType:erc721": "ts-node src/evm/erc721/supports-interface.ts",
+    "receipt:tx": "ts-node src/evm/common/transactionReceipt.ts"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
