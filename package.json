@@ -21,7 +21,8 @@
   "scripts": {
     "collector:erc721": "ts-node src/evm/erc721/index.ts",
     "checkType:erc721": "ts-node src/evm/erc721/supports-interface.ts",
-    "receipt:tx": "ts-node src/evm/common/transactionReceipt.ts"
+    "receipt:tx": "ts-node src/evm/common/transactionReceipt.ts",
+    "pending:tx": "ts-node src/evm/common/pendingTransaction.ts"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
