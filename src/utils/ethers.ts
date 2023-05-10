@@ -2,10 +2,19 @@ import { ethers } from 'ethers';
 
 import config from '../config';
 
-const { MAINNET_INFURA_WS, MAINNET_INFURA_URL } = config;
-
-export const webSocketProvider = new ethers.WebSocketProvider(
+const {
   MAINNET_INFURA_WS,
-);
+  MAINNET_INFURA_URL,
+  POLYGON_ALCHEMY_URL,
+  POLYGON_ALCHEMY_WS,
+} = config;
 
-export const jsonRpcProvider = new ethers.JsonRpcProvider(MAINNET_INFURA_URL);
+const WS =
+  process.env.NETWORK === 'ETH' ? MAINNET_INFURA_WS : POLYGON_ALCHEMY_WS;
+
+const HTTP =
+  process.env.NETWORK === 'ETH' ? MAINNET_INFURA_URL : POLYGON_ALCHEMY_URL;
+
+export const webSocketProvider = new ethers.WebSocketProvider(WS);
+
+export const jsonRpcProvider = new ethers.JsonRpcProvider(HTTP);

@@ -44,7 +44,7 @@ export async function findERC721TransferEventInBlock() {
                 price,
               };
 
-              await insertERC721TransferTxInfo(nftData);
+              // await insertERC721TransferTxInfo(nftData);
             }
           });
         }
