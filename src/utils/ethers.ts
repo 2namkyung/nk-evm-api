@@ -7,13 +7,35 @@ const {
   MAINNET_INFURA_URL,
   POLYGON_ALCHEMY_URL,
   POLYGON_ALCHEMY_WS,
+  MUMBAI_ALCHEMY_WS,
+  MUMBAI_ALCHEMY_URL,
+  NETWORK,
 } = config;
 
-const WS =
-  process.env.NETWORK === 'ETH' ? MAINNET_INFURA_WS : POLYGON_ALCHEMY_WS;
+let WS, HTTP;
+function providerInit() {
+  switch (NETWORK) {
+    case 'ETH':
+      WS = MAINNET_INFURA_WS;
+      HTTP = MAINNET_INFURA_URL;
+      break;
 
-const HTTP =
-  process.env.NETWORK === 'ETH' ? MAINNET_INFURA_URL : POLYGON_ALCHEMY_URL;
+    case 'MATIC':
+      WS = POLYGON_ALCHEMY_WS;
+      HTTP = POLYGON_ALCHEMY_URL;
+      break;
+
+    case 'MUMBAI':
+      WS = MUMBAI_ALCHEMY_WS;
+      HTTP = MUMBAI_ALCHEMY_URL;
+      break;
+
+    default:
+      throw new Error('Invalid Blockchain Network');
+  }
+}
+
+providerInit();
 
 export const webSocketProvider = new ethers.WebSocketProvider(WS);
 

@@ -15,6 +15,10 @@ const {
   DB_USER,
   DB_PASSWORD,
   DB_NAME,
+  PRIVATE_KEY,
+  MUMBAI_ALCHEMY_WS,
+  MUMBAI_ALCHEMY_URL,
+  NETWORK,
 } = process.env;
 
 export default {
@@ -30,4 +34,8 @@ export default {
   DB_USER,
   DB_PASSWORD,
   DB_NAME,
+  PRIVATE_KEY,
+  MUMBAI_ALCHEMY_WS,
+  MUMBAI_ALCHEMY_URL,
+  NETWORK,
 };
