@@ -1,6 +1,5 @@
 import { TransactionRequest, ethers, keccak256 } from 'ethers';
-import config from '../../config';
-import { jsonRpcProvider } from '../../utils/ethers';
+import { signer } from '../../utils/ethers';
 
 const tx = {
   from: '0x504370060B9d5433679e557621ee31a3B960C157',
@@ -13,9 +12,7 @@ const tx = {
   chainId: 80001, // MUMBAI
 };
 
-const signer = new ethers.Wallet(config.PRIVATE_KEY, jsonRpcProvider);
-
-async function signTx(tx: TransactionRequest) {
+export async function signTx(tx: TransactionRequest) {
   const signedTx = await signer.signTransaction(tx);
 
   // calculate transationHash

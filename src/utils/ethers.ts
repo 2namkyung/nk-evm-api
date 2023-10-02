@@ -10,24 +10,27 @@ const {
   MUMBAI_ALCHEMY_WS,
   MUMBAI_ALCHEMY_URL,
   NETWORK,
+  PRIVATE_KEY,
 } = config;
 
-let WS, HTTP;
+let ws: string | null;
+let http: string | null;
+
 function providerInit() {
   switch (NETWORK) {
     case 'ETH':
-      WS = MAINNET_INFURA_WS;
-      HTTP = MAINNET_INFURA_URL;
+      ws = MAINNET_INFURA_WS;
+      http = MAINNET_INFURA_URL;
       break;
 
     case 'MATIC':
-      WS = POLYGON_ALCHEMY_WS;
-      HTTP = POLYGON_ALCHEMY_URL;
+      ws = POLYGON_ALCHEMY_WS;
+      http = POLYGON_ALCHEMY_URL;
       break;
 
     case 'MUMBAI':
-      WS = MUMBAI_ALCHEMY_WS;
-      HTTP = MUMBAI_ALCHEMY_URL;
+      ws = MUMBAI_ALCHEMY_WS;
+      http = MUMBAI_ALCHEMY_URL;
       break;
 
     default:
@@ -37,6 +40,7 @@ function providerInit() {
 
 providerInit();
 
-export const webSocketProvider = new ethers.WebSocketProvider(WS);
+export const jsonRpcProvider = new ethers.JsonRpcProvider(http);
+export const webSocketProvider = new ethers.WebSocketProvider(ws);
 
-export const jsonRpcProvider = new ethers.JsonRpcProvider(HTTP);
+export const signer = new ethers.Wallet(PRIVATE_KEY, jsonRpcProvider);
