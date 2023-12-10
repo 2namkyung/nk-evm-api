@@ -12,7 +12,7 @@ function formattingTokenAmount(amount: number): ethers.BigNumberish {
 }
 
 function funcCallEncodedData(toAddress: string, amount: ethers.BigNumberish) {
-  return iface.encodeFunctionData('transfer', ['toAddress', amount]);
+  return iface.encodeFunctionData('transfer', [toAddress, amount]);
 }
 
 export async function estimateGas(
