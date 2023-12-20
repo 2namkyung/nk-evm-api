@@ -25,7 +25,8 @@
     "pending:tx": "ts-node src/evm/common/pendingTransaction.ts",
     "network:gas": "ts-node src/evm/common/networkInfo.ts",
     "sign:tx": "ts-node src/evm/common/signTransaction.ts",
-    "estimateGas": "ts-node src/evm/common/estimateGas.ts"
+    "estimateGas": "ts-node src/evm/common/estimateGas.ts",
+    "parseInput:tx": "ts-node src/evm/common/parseInputData.ts"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

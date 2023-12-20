@@ -5,8 +5,6 @@ import config from '../config';
 const {
   MAINNET_INFURA_WS,
   MAINNET_INFURA_URL,
-  POLYGON_ALCHEMY_URL,
-  POLYGON_ALCHEMY_WS,
   MUMBAI_ALCHEMY_WS,
   MUMBAI_ALCHEMY_URL,
   BESU_URL,
@@ -23,11 +21,6 @@ function initProvider() {
     case 'ETH':
       ws = MAINNET_INFURA_WS;
       http = MAINNET_INFURA_URL;
-      break;
-
-    case 'MATIC':
-      ws = POLYGON_ALCHEMY_WS;
-      http = POLYGON_ALCHEMY_URL;
       break;
 
     case 'MUMBAI':
