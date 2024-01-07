@@ -26,7 +26,8 @@
     "network:gas": "ts-node src/evm/common/networkInfo.ts",
     "sign:tx": "ts-node src/evm/common/signTransaction.ts",
     "estimateGas": "ts-node src/evm/common/estimateGas.ts",
-    "parseInput:tx": "ts-node src/evm/common/parseInputData.ts"
+    "parseInput:tx": "ts-node src/evm/common/parseInputData.ts",
+    "nonce:wallet": "ts-node src/evm/common/getNonce.ts"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
